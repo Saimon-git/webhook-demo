@@ -3,7 +3,7 @@
 $method = $_SERVER['REQUEST_METHOD'];
 
 $data = json_decode(file_get_contents('php://input'), true);
-echo 'here';
+var_dump($data);
 	foreach($data['messages'] as $message){ // Echo every message
 		// Handle every message here
 		// Add to the database or generate a response
