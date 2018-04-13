@@ -18,11 +18,14 @@ echo "Conexión exitosa\n";
 pg_close($dbconn);
 
 $data = json_decode(file_get_contents('php://input'), true);
-var_dump($data);
+//var_dump($data);
 	foreach($data['messages'] as $message){ // Echo every message
 		// Handle every message here
 		// Add to the database or generate a response
-		var_dump($message);
+		$query = "INSERT INTO book VALUES ('$message')";
+
+		$result = pg_query($query); 
+		
 	}
 
 // Process only when method is POST
